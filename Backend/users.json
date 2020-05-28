@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "userName": "Pelle Palmquist",
+    "userEmail": "pelle@mail.com",
+    "isSubscriber": false
+  },
+  {
+    "id": "2",
+    "userName": "Karin Norrlander",
+    "userEmail": "karin@mail.com",
+    "isSubscriber": true
+  },
+  {
+    "id": "3",
+    "userName": "Doris Katt",
+    "userEmail": "doris@mail.com",
+    "isSubscriber": true
+  },
+  {
+    "id": "4",
+    "userName": "Sigge Katt",
+    "userEmail": "sigge@mail.com",
+    "isSubscriber": false
+  }
+]
