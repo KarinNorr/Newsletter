@@ -45,13 +45,51 @@ router.post('/newUser', function(request, response){
   
 });
 
+/* POST newUser */
+router.post('/tryUser', function(request, response) {
+
+  fs.readFile("users.json", (err, data) => {
+    if(err) throw err; 
+    var users = JSON.parse(data);
+    var user = users.find(u => u.userName == request.body.userName && u.userEmail == request.body.userEmail);
+
+    console.log(user);
+    console.log(user.userPassword);
+    var decryptedPass = decryptPassword(user.userPassword);
+    //var decryptedPass = CryptoJS.AES.decrypt(user.userPassword, "Salt nyckel").toString(CryptoJS.enc.Utf8);
+    console.log("Loggar det dekrypterade lösenordet");
+    console.log(decryptedPass);
+    if (decryptedPass == request.body.userPassword)
+    {
+      response.send("Du är inloggad");
+      //skicka tillbaks data
+    }
+    else {
+      //response.send("Lösenordet matchar inte");
+      response.sendStatus(401);
+
+  }
+    
+  })
+
+
+});
+
+
 function encryptPassword(userPassword)
 {
-  var passWordToCrypt = CryptoJS.AES.encrypt(userPassword, "Salt nyckel").toString();
+  var passwordToEncrypt = CryptoJS.AES.encrypt(userPassword, "Salt nyckel").toString();
   console.log("Krypterar lösenord");
-  console.log(passWordToCrypt);
-  return passWordToCrypt;
+  console.log(passwordToEncrypt);
+  return passwordToEncrypt;
   
+}
+function decryptPassword(encryptetPassword)
+{
+  var decryptedPass = CryptoJS.AES.decrypt(encryptetPassword, "Salt nyckel").toString(CryptoJS.enc.Utf8);
+  console.log("Dekrypterar lösenord");
+  console.log(decryptedPass);
+  return decryptedPass;
 }
 
   
