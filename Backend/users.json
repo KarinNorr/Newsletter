@@ -22,5 +22,21 @@
     "userName": "Sigge Katt",
     "userEmail": "sigge@mail.com",
     "isSubscriber": false
+  },
+  {
+    "id": "8",
+    "userEmail": "karin@barprego.se",
+    "subscribe": true
+  },
+  {
+    "id": "9",
+    "userEmail": "hanna@mejl.se",
+    "subscribe": true
+  },
+  {
+    "id": "10",
+    "userName": "Hanna",
+    "userEmail": "hanna@mejl.se",
+    "subscribe": true
   }
 ]
