@@ -3,40 +3,109 @@
     "id": "1",
     "userName": "Pelle Palmquist",
     "userEmail": "pelle@mail.com",
+    "userPassword": "hejigen",
     "isSubscriber": false
   },
   {
     "id": "2",
     "userName": "Karin Norrlander",
     "userEmail": "karin@mail.com",
+    "userPassword": "hejigen",
     "isSubscriber": true
   },
   {
     "id": "3",
     "userName": "Doris Katt",
     "userEmail": "doris@mail.com",
+    "userPassword": "hejigen",
     "isSubscriber": true
   },
   {
     "id": "4",
     "userName": "Sigge Katt",
     "userEmail": "sigge@mail.com",
+    "userPassword": "hejigen",
     "isSubscriber": false
   },
   {
     "id": "8",
     "userEmail": "karin@barprego.se",
-    "subscribe": true
+    "userPassword": "hejigen",
+    "isSubscriber": true
   },
   {
     "id": "9",
     "userEmail": "hanna@mejl.se",
-    "subscribe": true
+    "userPassword": "hejigen",
+    "isSubscriber": true
   },
   {
     "id": "10",
     "userName": "Hanna",
     "userEmail": "hanna@mejl.se",
-    "subscribe": true
+    "userPassword": "hejigen",
+    "isSubscriber": true
+  },
+  {
+    "id": "10",
+    "userName": "Hanna",
+    "userEmail": "hanna@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "12",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "12",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "12",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "15",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "16",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "16",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "16",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "userPassword": "hallo",
+    "isSubscriber": true
+  },
+  {
+    "id": "18",
+    "userName": "Jan",
+    "userEmail": "jan@mejl.se",
+    "isSubscriber": true
+  },
+  {
+    "id": "18",
+    "userName": "Jan",
+    "userEmail": "jan@mejl.se",
+    "userPassword": "U2FsdGVkX1+lm4xu6Kn5xIk7QFW13mF83UGHjVEtqD0=",
+    "isSubscriber": true
   }
 ]

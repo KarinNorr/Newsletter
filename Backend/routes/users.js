@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var CryptoJS = require('crypto-js');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -14,18 +15,23 @@ router.get('/', function(req, res, next) {
   
 });
 
-/* POST user */
+/* POST newUser */
 router.post('/newUser', function(request, response){
   fs.readFile("users.json", (err, data) => {
     if(err) throw err; 
     var users = JSON.parse(data);
     
-    newUser = {
-      "id": request.body.id,
-      "userName": request.body.userName,
-      "userEmail": request.body.userEmail,
-      "subscribe": request.body.isSubscriber
+    var cryptoPassword = addCryptoPassword(request.body.userPassword);
+
+    var newUser = {
+      id: request.body.id,
+      userName: request.body.userName,
+      userEmail: request.body.userEmail,
+      userPassword: cryptoPassword,
+      isSubscriber: request.body.isSubscriber
     }
+
+    console.log(newUser);
 
     users.push(newUser);
     var saveUsers = JSON.stringify(users, null, 2);
@@ -39,15 +45,14 @@ router.post('/newUser', function(request, response){
   
 });
 
-    
-  //kryptera lösenordet
-  //kalla på metoden som krypterar lösenordet 
-  //fånga informationen från ett formulär
-  // Skickas med json til post
-  //Kryptera lösenord innan spara
-  //spara till users.json
-  //writefile 
-  //
+function addCryptoPassword(userPassword)
+{
+  var passWordToCrypt = CryptoJS.AES.encrypt(userPassword, "Salt nyckel").toString();
+  console.log("Krypterar lösenord");
+  console.log(passWordToCrypt);
+  return passWordToCrypt;
+  
+}
 
   
 
@@ -67,4 +72,3 @@ router.post('/newUser', function(request, response){
 
 module.exports = router;
 
-//metod som krypterar password
