@@ -107,5 +107,12 @@
     "userEmail": "jan@mejl.se",
     "userPassword": "U2FsdGVkX1+lm4xu6Kn5xIk7QFW13mF83UGHjVEtqD0=",
     "isSubscriber": true
+  },
+  {
+    "id": "19",
+    "userName": "Ola",
+    "userEmail": "ola@mejl.se",
+    "userPassword": "U2FsdGVkX19InXbZYCnOOQXRiCENvlbryXsAADBH00w=",
+    "isSubscriber": true
   }
 ]

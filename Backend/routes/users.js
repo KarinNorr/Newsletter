@@ -21,13 +21,13 @@ router.post('/newUser', function(request, response){
     if(err) throw err; 
     var users = JSON.parse(data);
     
-    var cryptoPassword = addCryptoPassword(request.body.userPassword);
+    var encryptedPassword = encryptPassword(request.body.userPassword);
 
     var newUser = {
       id: request.body.id,
       userName: request.body.userName,
       userEmail: request.body.userEmail,
-      userPassword: cryptoPassword,
+      userPassword: encryptedPassword,
       isSubscriber: request.body.isSubscriber
     }
 
@@ -45,7 +45,7 @@ router.post('/newUser', function(request, response){
   
 });
 
-function addCryptoPassword(userPassword)
+function encryptPassword(userPassword)
 {
   var passWordToCrypt = CryptoJS.AES.encrypt(userPassword, "Salt nyckel").toString();
   console.log("Krypterar lösenord");
