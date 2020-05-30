@@ -45,7 +45,7 @@ router.post('/newUser', function (request, response) {
 
 });
 
-/* POST newUser */
+/* POST tryUser */
 router.post('/tryUser', function (request, response) {
 
   fs.readFile("users.json", (err, data) => {
@@ -76,7 +76,6 @@ router.post('/tryUser', function (request, response) {
 router.put('/:id', function(request, response){
   let userId = request.params.id;
   console.log(userId);
-
 
   fs.readFile("users.json", (err, data) => {
     if (err) throw err;
