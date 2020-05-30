@@ -47,24 +47,6 @@
     "isSubscriber": true
   },
   {
-    "id": "10",
-    "userName": "Hanna",
-    "userEmail": "hanna@mejl.se",
-    "isSubscriber": true
-  },
-  {
-    "id": "12",
-    "userName": "Peter",
-    "userEmail": "peter@mejl.se",
-    "isSubscriber": true
-  },
-  {
-    "id": "12",
-    "userName": "Peter",
-    "userEmail": "peter@mejl.se",
-    "isSubscriber": true
-  },
-  {
     "id": "12",
     "userName": "Peter",
     "userEmail": "peter@mejl.se",
@@ -77,29 +59,10 @@
     "isSubscriber": true
   },
   {
-    "id": "16",
-    "userName": "Peter",
-    "userEmail": "peter@mejl.se",
-    "isSubscriber": true
-  },
-  {
-    "id": "16",
-    "userName": "Peter",
-    "userEmail": "peter@mejl.se",
-    "isSubscriber": true
-  },
-  {
-    "id": "16",
-    "userName": "Peter",
-    "userEmail": "peter@mejl.se",
-    "userPassword": "hallo",
-    "isSubscriber": true
-  },
-  {
-    "id": "18",
+    "id": "17",
     "userName": "Jan",
     "userEmail": "jan@mejl.se",
-    "isSubscriber": true
+    "isSubscriber": false
   },
   {
     "id": "18",
@@ -113,6 +76,20 @@
     "userName": "Ola",
     "userEmail": "ola@mejl.se",
     "userPassword": "U2FsdGVkX19InXbZYCnOOQXRiCENvlbryXsAADBH00w=",
+    "isSubscriber": true
+  },
+  {
+    "id": "19",
+    "userName": "Ola",
+    "userEmail": "ola@mejl.se",
+    "userPassword": "U2FsdGVkX198MAWtrRC2ua5aIEgnLdPrEPmXjvEUnRs=",
+    "isSubscriber": true
+  },
+  {
+    "id": "16",
+    "userName": "Peter",
+    "userEmail": "peter@mejl.se",
+    "userPassword": "hallo",
     "isSubscriber": true
   }
 ]

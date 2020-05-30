@@ -65,12 +65,36 @@ router.post('/tryUser', function (request, response) {
     }
     else {
       response.sendStatus(401);
-      
 
     }
 
   })
 });
+
+
+/* PUT changeSubscriber */
+router.put('/:id', function(request, response){
+  let userId = request.params.id;
+  console.log(userId);
+
+
+  fs.readFile("users.json", (err, data) => {
+    if (err) throw err;
+    let users = JSON.parse(data);
+    var userToChange = users.find(u => u.id == userId)
+    console.log(userToChange);
+    userToChange.isSubscriber = request.body.isSubscriber;
+
+    let saveUsers = JSON.stringify(users, null, 2);
+    fs.writeFile("users.json", saveUsers, (err, data) => {
+      if (err) throw err;
+    });
+    
+    console.log(userToChange);
+    response.send("Ändrat!");
+  })
+
+})
 
 
 function encryptPassword(userPassword) {
