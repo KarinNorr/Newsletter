@@ -22,8 +22,9 @@ class Loggin extends React.Component{
         console.log("Användarnamn:");
         console.log(name);
 
-        this.setState = ({userName: event.target.value })
-        // console.log(event.target);
+
+        this.setState = ({userName: event.target.userName })
+        console.log(event.target.userName);
         // this.setState( {valueName:event.target.name.value })
         console.log( {userName:event.target.value} );
         // this.setState( {valueUserid:event.target.value })
@@ -37,7 +38,7 @@ class Loggin extends React.Component{
         // //kör callback tillbaks till parent igen
         // //med datan som behövs
         // //göra en fetch för att hämta informationen 
-        this.props.getCurrentUser(this.state.userName.value);
+        this.props.getCurrentUser(this.state.userName);
         event.preventDefault();
     }
 
@@ -49,7 +50,7 @@ class Loggin extends React.Component{
             <div>
             {showStart}
                 <br/>
-                <form onSubmit = { this.handleSubmit}>
+                <form onSubmit={ this.handleSubmit}>
                     <label>
                         Användarnamn:
                         <input type="text" 
