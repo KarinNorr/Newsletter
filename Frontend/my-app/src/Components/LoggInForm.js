@@ -13,10 +13,14 @@ class Loggin extends React.Component{
 
 
     handleChange = (event) => {
-        console.log(event.target);
+
+        const target = event.target;
+        const name = target.name;
+
+        console.log(target);
         //const userName = event.target.userName.value;
         console.log("Användarnamn:");
-        //console.log(userName);
+        console.log(name);
 
         this.setState = ({userName: event.target.value })
         // console.log(event.target);
@@ -48,13 +52,20 @@ class Loggin extends React.Component{
                 <form onSubmit = { this.handleSubmit}>
                     <label>
                         Användarnamn:
-                        <input type="text" name="userName" value ={ this.state.userName.value } onChange = { this.handleChange } />
+                        <input type="text" 
+                        name="userName" 
+                        value={this.state.userName.value} 
+                        onChange = { this.handleChange }/>
                         Lösenord:
-                        <input type="text" name="userPassword" value = { this.state.userPassword.value } onChange = { this.handleChange } />
+                        <input type="text" 
+                        name="userPassword" 
+                        value={this.state.userPassword.value} 
+                        onChange ={this.handleChange} />
                     </label>
-                    <input type="submit" value="Submit"/>
+                    <input 
+                    type="submit" 
+                    value="Submit"/>
                 </form>
-               {/* <button onClick>Tryck här!</button> */}
             </div>
         );
     }
