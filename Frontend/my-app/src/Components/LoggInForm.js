@@ -7,6 +7,7 @@ class Loggin extends React.Component{
         this.state = { userName: '', usserId: '', userEmail: '', userPassword: '' };
         
          this.handleChange = this.handleChange.bind(this);
+         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
    
@@ -14,23 +15,8 @@ class Loggin extends React.Component{
 
     handleChange = (event) => {
 
-        const target = event.target;
-        const name = target.name;
-
-        console.log(target);
-        //const userName = event.target.userName.value;
-        console.log("Användarnamn:");
-        console.log(name);
-
-
-        this.setState = ({userName: event.target.userName })
-        console.log(event.target.userName);
-        // this.setState( {valueName:event.target.name.value })
-        console.log( {userName:event.target.value} );
-        // this.setState( {valueUserid:event.target.value })
-        // this.setState( {valueEmail:event.target.value })
-        // this.setState( {valuePassword:event.target.password.value })
-
+        const stateToUpdate = event.target.name;
+        this.setState({[stateToUpdate]: event.target.value })
 
     }
 
@@ -55,12 +41,12 @@ class Loggin extends React.Component{
                         Användarnamn:
                         <input type="text" 
                         name="userName" 
-                        value={this.state.userName.value} 
+                        value={this.state.userName} 
                         onChange = { this.handleChange }/>
                         Lösenord:
                         <input type="text" 
                         name="userPassword" 
-                        value={this.state.userPassword.value} 
+                        value={this.state.userPassword} 
                         onChange ={this.handleChange} />
                     </label>
                     <input 
