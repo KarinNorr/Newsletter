@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Loggin from './Components/LoggInForm';
 import LoggOutUser from './Components/LoggOutUser';
+import LoggedInUser from './Components/LoggedInUser';
 
 class App extends React.Component {
 
@@ -11,9 +12,8 @@ class App extends React.Component {
     super(props)
 
     const currentUser = localStorage.getItem("currentUser");
-    //const userId = { currentUser ? currentUser : null };
 
-    this.state = { showStart: "Välkommen! Logga in eller registrera dig", currentUser: currentUser }
+    this.state = { showStart: "Välkommen! Logga in eller registrera dig", currentUser: currentUser, isSubscriber: null }
 
   };
 
@@ -31,6 +31,11 @@ class App extends React.Component {
     localStorage.removeItem("currentUser"); 
   }
 
+  changeSubscriptionStatus = () => {
+    //sätt state till det true/false
+    //this.setState( { isSubscriber: isSubscriber});
+  }
+
 
   render() {
     
@@ -39,6 +44,7 @@ class App extends React.Component {
       <div className="App">
         <Loggin showStart={this.state.showStart} getCurrentUser={this.currentUserId} />
         <LoggOutUser logOutUser={this.logoutUser} /> 
+        <LoggedInUser isSubscriber={this.state.isSubscriber} changeStatus={this.changeSubscriptionStatus}/>
       </div>
     );
   }
