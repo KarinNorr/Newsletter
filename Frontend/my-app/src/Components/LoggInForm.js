@@ -19,13 +19,8 @@ class Loggin extends React.Component {
     }
 
     handleSubmit = (event) => {
-        // //kör callback tillbaks till parent igen
-        // //med datan som behövs
-        // //göra en fetch för att hämta informationen 
 
         this.tryUser(this.state.userName, this.state.userEmail, this.state.userPassword)
-
-        this.props.getCurrentUser(this.state.userName);
         event.preventDefault();
     }
 
@@ -47,13 +42,13 @@ class Loggin extends React.Component {
             .then(data => {
                 console.log("Nu kommer datan tillbaks")
                 console.log(data)
-                //this.setState({ userId: data })
+                //this.setState({ userId: data.userId })
+                //kalla på funktionen 
+                this.props.getCurrentUser(data.userId, data.isSubscriber);
             })
             .catch (err => {
             console.log(err);
         });
-        console.log("Nu kommer datan tillbaks")
-        
     }
 
 

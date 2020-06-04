@@ -62,7 +62,7 @@ router.post('/tryUser', function (request, response) {
     console.log("Loggar det dekrypterade lösenordet");
     console.log(decryptedPass);
     if (decryptedPass == request.body.userPassword) {
-      response.send({ userId: user.id});
+      response.send({ userId: user.id, isSubscriber: user.isSubscriber});
       //skicka tillbaks användarId
     }
     else {
