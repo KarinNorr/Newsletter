@@ -79,7 +79,7 @@ class Loggin extends React.Component {
                     </label>
                     <input
                         type="submit"
-                        value="Submit" />
+                        value="Logga in" />
                 </form>
             </div>
         );

@@ -3,6 +3,7 @@ import './App.css';
 import Loggin from './Components/LoggInForm';
 import LoggOutUser from './Components/LoggOutUser';
 import LoggedInUser from './Components/LoggedInUser';
+import AddNewUser from './Components/NewUserForm';
 
 class App extends React.Component {
 
@@ -13,7 +14,7 @@ class App extends React.Component {
 
     const currentUser = localStorage.getItem("currentUser");
 
-    this.state = { showStart: "Välkommen! Logga in eller registrera dig", currentUser: currentUser, isSubscriber: null }
+    this.state = { showStart: "Välkommen! LOGGA IN HÄR:", currentUser: currentUser, isSubscriber: null }
 
   };
 
@@ -27,8 +28,8 @@ class App extends React.Component {
   }
 
   logoutUser = () => {
-    this.setState( { currentUser: null});
-    localStorage.removeItem("currentUser"); 
+    this.setState({ currentUser: null });
+    localStorage.removeItem("currentUser");
   }
 
   changeSubscriptionStatus = () => {
@@ -38,17 +39,29 @@ class App extends React.Component {
 
 
   render() {
-    
 
-    return (
-      <div className="App">
-        <Loggin showStart={this.state.showStart} getCurrentUser={this.currentUserId} />
-        <LoggOutUser logOutUser={this.logoutUser} /> 
-        <LoggedInUser isSubscriber={this.state.isSubscriber} changeStatus={this.changeSubscriptionStatus}/>
-      </div>
-    );
+    if (this.state.currentUser == null) {
+      return (
+        <div className="App">
+          <Loggin showStart={this.state.showStart} getCurrentUser={this.currentUserId} />
+          {/* addera ny användare */}
+          <br/>
+          <br/>
+        <AddNewUser/>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div className="App">
+          <LoggedInUser isSubscriber={this.state.isSubscriber} changeStatus={this.changeSubscriptionStatus} />
+          <LoggOutUser logOutUser={this.logoutUser} />
+        </div>
+
+      );
+    }
   }
-
 }
+
 
 export default App;
