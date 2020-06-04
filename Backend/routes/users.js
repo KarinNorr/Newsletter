@@ -3,6 +3,8 @@ var router = express.Router();
 var fs = require('fs');
 var CryptoJS = require('crypto-js');
 
+
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   fs.readFile("users.json", (err, data) => {
@@ -60,7 +62,7 @@ router.post('/tryUser', function (request, response) {
     console.log("Loggar det dekrypterade lösenordet");
     console.log(decryptedPass);
     if (decryptedPass == request.body.userPassword) {
-      response.send("Du är inloggad");
+      response.send({ userId: user.id});
       //skicka tillbaks användarId
     }
     else {

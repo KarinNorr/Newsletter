@@ -79,13 +79,6 @@
     "isSubscriber": true
   },
   {
-    "id": "19",
-    "userName": "Ola",
-    "userEmail": "ola@mejl.se",
-    "userPassword": "U2FsdGVkX198MAWtrRC2ua5aIEgnLdPrEPmXjvEUnRs=",
-    "isSubscriber": true
-  },
-  {
     "id": "16",
     "userName": "Peter",
     "userEmail": "peter@mejl.se",
