@@ -34,7 +34,7 @@ class App extends React.Component {
 
   changeSubscriptionStatus = (isSubscriber) => {
     //sätt state till det true/false
-    //this.setState( { isSubscriber: isSubscriber});
+    this.setState({ isSubscriber: isSubscriber});
   }
 
 

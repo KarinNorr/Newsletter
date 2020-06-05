@@ -5,31 +5,45 @@ class LoggedInUser extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({ isSubscriber: this.props.isSubscriber});
+        console.log(this.state);
         //this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
    
     handleChange = (event) => {
 
-        
-        this.setState({isSubscriber: (this.state.isSubscriber ? false : true)}, () =>
-        //this.props.isSubscriber.changeStatus(this.state.isSubscriber));
-        console.log("handleChange körs"));
-    
-        // const isSubscriber = this.props.isSubscriber;
-
-        // const stateToUpdate = event.target.name;
-        // this.setState({ [stateToUpdate]: event.target.value })
-
-        // this.props.changeStatus();s
+        event.preventDefault();
+        this.setState({isSubscriber: (this.state.isSubscriber ? false : true)}, () => {
+            this.props.changeStatus(this.state.isSubscriber);
+            console.log("handleChange körs");
+            this.changeSubscriber(this.state.isSubscriber, localStorage.getItem("currentUser"));
+        });
 
     }
+
+    changeSubscriber  = (isSubscriber, userId) => {
+        console.log("Loggar ut användarId:");
+        console.log(userId);
+        console.log(isSubscriber);
+        console.log("Sparar ändringen till databas");
+
+        var data= {"isSubscriber": isSubscriber}
+        
+        fetch("http://localhost:3000/users/" + userId, {
+          "method": "PUT",
+          "headers": {
+            "Content-type":'application/json',
+          },
+          "body": JSON.stringify(data),
+          })
+          .catch(err => {
+              console.log(err);
+          });
+      } 
     
 
 
     render() {
-
-        const isSubscriber = this.props.isSubscriber;
 
         return(
             <div>
@@ -40,27 +54,13 @@ class LoggedInUser extends React.Component {
                 Jag vill ha nyhetsbrev: 
                 <input type="checkbox"
                     onChange={this.handleChange}
-                    value={this.state.isSubscriber}
+                    checked={this.state.isSubscriber}
                 />
             </form>
-            {/* <button onClick= {this.handleClick}
-            onChange={this.handleChange}>
-            {isSubscriber ?  'ON' : 'OFF'}
-            </button> */}
             </div>
         );
     }
 }
 
 export default LoggedInUser;
-
-//konstruktor två värden 
-//userId och isSubscriber
-
-//state isSubscriber
-
-//props 
-
-
-//visar en checkbox som är ibockad eller urbockad
 

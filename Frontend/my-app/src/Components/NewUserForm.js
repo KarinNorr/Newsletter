@@ -23,11 +23,11 @@ class AddNewUser extends React.Component {
         event.preventDefault();
     }
 
-    //posta ny användare. Gör klar funktionen
+   
     addNewUser = (userName, userEmail, userPassword, userIsSubscriber) => {
         console.log("Användare läggs till");
 
-        var data = { userName: userName, userEmail: userEmail, userPassword: userPassword, isSubscriber:userIsSubscriber }
+        var data = { userName: userName, userEmail: userEmail, userPassword: userPassword, isSubscriber: userIsSubscriber }
         console.log(data);
 
         fetch("http://localhost:3000/users/newUser", {
@@ -41,8 +41,6 @@ class AddNewUser extends React.Component {
             .then(data => {
                 console.log("Nu kommer datan tillbaks")
                 console.log(data)
-                //this.setState({ userId: data.userId })
-                //kalla på funktionen 
                 this.props.getCurrentUser(data.userId, data.isSubscriber);
             })
             .catch (err => {
@@ -77,14 +75,6 @@ class AddNewUser extends React.Component {
                             value={this.state.userPassword}
                             onChange={this.handleChange} />
                         <br/>
-                        Nyhetsbrev:
-                        <input type="checkbox"
-                            name="userIsSubscriber"
-                            onChange={this.handleChange}
-                            value={this.state.isSubscriber}
-                            
-                            
-                        />
                     </label>
                     <br/>
                     <br/>

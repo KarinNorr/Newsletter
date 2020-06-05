@@ -76,7 +76,7 @@
     "userName": "Ola",
     "userEmail": "ola@mejl.se",
     "userPassword": "U2FsdGVkX19InXbZYCnOOQXRiCENvlbryXsAADBH00w=",
-    "isSubscriber": true
+    "isSubscriber": false
   },
   {
     "id": "13",
@@ -125,6 +125,27 @@
     "userName": "",
     "userEmail": "",
     "userPassword": "U2FsdGVkX19BdHmv0Flg1sRhBCoik3N8czmM27+GQoE=",
+    "isSubscriber": false
+  },
+  {
+    "id": 20,
+    "userName": "Karin",
+    "userEmail": "karin@barprego.se",
+    "userPassword": "U2FsdGVkX185ahyWk3NiPIfshlqQ7TwCaDZYQvFoSog=",
+    "isSubscriber": true
+  },
+  {
+    "id": 21,
+    "userName": "HANNA",
+    "userEmail": "456",
+    "userPassword": "U2FsdGVkX1/xnXDDervEzd7Gk/hsHH/M3mvOkq3Zr4Q=",
+    "isSubscriber": true
+  },
+  {
+    "id": 22,
+    "userName": "Yngve",
+    "userEmail": "yngve@epost.se",
+    "userPassword": "U2FsdGVkX188APLG33Ni9Aifa7UtfFcdVoNQlehH+b0=",
     "isSubscriber": false
   }
 ]
