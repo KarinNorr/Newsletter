@@ -28,61 +28,103 @@
     "isSubscriber": false
   },
   {
-    "id": "8",
+    "id": "5",
     "userEmail": "karin@barprego.se",
     "userPassword": "hejigen",
     "isSubscriber": true
   },
   {
-    "id": "9",
+    "id": "6",
     "userEmail": "hanna@mejl.se",
     "userPassword": "hejigen",
     "isSubscriber": true
   },
   {
-    "id": "10",
+    "id": "7",
     "userName": "Hanna",
     "userEmail": "hanna@mejl.se",
     "userPassword": "hejigen",
     "isSubscriber": true
   },
   {
-    "id": "12",
+    "id": "8",
     "userName": "Peter",
     "userEmail": "peter@mejl.se",
     "isSubscriber": true
   },
   {
-    "id": "15",
+    "id": "9",
     "userName": "Peter",
     "userEmail": "peter@mejl.se",
     "isSubscriber": true
   },
   {
-    "id": "17",
+    "id": "10",
     "userName": "Jan",
     "userEmail": "jan@mejl.se",
     "isSubscriber": false
   },
   {
-    "id": "18",
+    "id": "11",
     "userName": "Jan",
     "userEmail": "jan@mejl.se",
     "userPassword": "U2FsdGVkX1+lm4xu6Kn5xIk7QFW13mF83UGHjVEtqD0=",
     "isSubscriber": true
   },
   {
-    "id": "19",
+    "id": "12",
     "userName": "Ola",
     "userEmail": "ola@mejl.se",
     "userPassword": "U2FsdGVkX19InXbZYCnOOQXRiCENvlbryXsAADBH00w=",
     "isSubscriber": true
   },
   {
-    "id": "16",
+    "id": "13",
     "userName": "Peter",
     "userEmail": "peter@mejl.se",
     "userPassword": "hallo",
     "isSubscriber": true
+  },
+  {
+    "id": "14",
+    "userName": "Karin",
+    "userEmail": "karin@barprego.se",
+    "userPassword": "U2FsdGVkX18JiujuECDUMI2EUM0sd+jh1sGU74Cdtyw=",
+    "isSubscriber": "false"
+  },
+  {
+    "id": 15,
+    "userName": "Penny",
+    "userEmail": "penny@epost.se",
+    "userPassword": "U2FsdGVkX19/Icn54qBVFlbiuN44Juy6hKRfmSMyDG4=",
+    "isSubscriber": "false"
+  },
+  {
+    "id": 16,
+    "userName": "Katten",
+    "userEmail": "katten@epost.se",
+    "userPassword": "U2FsdGVkX19uYsEm3L2rqi9kD13JEjr1CrpVRXRVWpY=",
+    "isSubscriber": false
+  },
+  {
+    "id": 17,
+    "userName": "Hunden",
+    "userEmail": "hund@epost.se",
+    "userPassword": "U2FsdGVkX1/TGy7RK69+vzrRfCNeAOLc9fbIqTH8ttc=",
+    "isSubscriber": "false"
+  },
+  {
+    "id": 18,
+    "userName": "Karin",
+    "userEmail": "ola@mejl.se",
+    "userPassword": "U2FsdGVkX1/0/x1fnrt78MzWHvNBNzQ6CCZDRMx9SjM=",
+    "isSubscriber": "false"
+  },
+  {
+    "id": 19,
+    "userName": "",
+    "userEmail": "",
+    "userPassword": "U2FsdGVkX19BdHmv0Flg1sRhBCoik3N8czmM27+GQoE=",
+    "isSubscriber": false
   }
 ]

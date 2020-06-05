@@ -6,9 +6,51 @@ class AddNewUser extends React.Component {
         super(props);
         this.state = { userName: '', userEmail: '', userPassword: '', userIsSubscriber: false };
 
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    //skriva metoderna
+    handleChange = (event) => {
+
+        const stateToUpdate = event.target.name;
+        this.setState({ [stateToUpdate]: event.target.value })
+
+    }
+
+    handleSubmit(event){
+        this.addNewUser(this.state.userName, this.state.userEmail, this.state.userPassword, this.state.userIsSubscriber);
+        event.preventDefault();
+    }
+
+    //posta ny användare. Gör klar funktionen
+    addNewUser = (userName, userEmail, userPassword, userIsSubscriber) => {
+        console.log("Användare läggs till");
+
+        var data = { userName: userName, userEmail: userEmail, userPassword: userPassword, isSubscriber:userIsSubscriber }
+        console.log(data);
+
+        fetch("http://localhost:3000/users/newUser", {
+            "method": "POST",
+            "headers": {
+                "Content-type": 'application/json',
+            },
+            "body": JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Nu kommer datan tillbaks")
+                console.log(data)
+                //this.setState({ userId: data.userId })
+                //kalla på funktionen 
+                this.props.getCurrentUser(data.userId, data.isSubscriber);
+            })
+            .catch (err => {
+            console.log(err);
+        });
+    }
+
+
 
     render() {
         return (
@@ -38,8 +80,9 @@ class AddNewUser extends React.Component {
                         Nyhetsbrev:
                         <input type="checkbox"
                             name="userIsSubscriber"
-                            value={this.state.userIsSubscriber}
                             onChange={this.handleChange}
+                            value={this.state.userIsSubscriber}
+                            
                         />
                     </label>
                     <br/>

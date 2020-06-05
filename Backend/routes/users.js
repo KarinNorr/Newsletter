@@ -23,10 +23,15 @@ router.post('/newUser', function (request, response) {
     if (err) throw err;
     var users = JSON.parse(data);
 
+    let newUserId = Number(users.length + 1);
+    console.log("Loggar ut längden på arrayen i json-filen");
+    console.log(newUserId);
+    console.log(users);
+
     var encryptedPassword = encryptPassword(request.body.userPassword);
 
     var newUser = {
-      id: request.body.id,
+      id: newUserId,
       userName: request.body.userName,
       userEmail: request.body.userEmail,
       userPassword: encryptedPassword,
@@ -41,7 +46,8 @@ router.post('/newUser', function (request, response) {
       if (err) throw err;
     });
 
-    response.send("Du är nu registrerad");
+    response.send({ userId: newUser.id, isSubscriber: newUser.isSubscriber});
+    
     //skicka tillbaks objektet istället
   })
 

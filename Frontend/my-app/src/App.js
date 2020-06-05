@@ -32,7 +32,7 @@ class App extends React.Component {
     localStorage.removeItem("currentUser");
   }
 
-  changeSubscriptionStatus = () => {
+  changeSubscriptionStatus = (isSubscriber) => {
     //sätt state till det true/false
     //this.setState( { isSubscriber: isSubscriber});
   }
@@ -47,7 +47,7 @@ class App extends React.Component {
           {/* addera ny användare */}
           <br/>
           <br/>
-        <AddNewUser/>
+        <AddNewUser getCurrentUser={this.currentUserId}/>
         </div>
       );
     }

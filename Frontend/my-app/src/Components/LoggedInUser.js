@@ -4,23 +4,27 @@ class LoggedInUser extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { isSubscriber: 'false'};
-        this.handleClick = this.handleClick.bind(this);
+        this.state = ({ isSubscriber: this.props.isSubscriber});
+        //this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
    
-   
+    handleChange = (event) => {
+
+        
+        this.setState({isSubscriber: (this.state.isSubscriber ? false : true)}, () =>
+        //this.props.isSubscriber.changeStatus(this.state.isSubscriber));
+        console.log("handleChange körs"));
     
-    handleClick() {
-        
-        //gör en put
+        // const isSubscriber = this.props.isSubscriber;
 
-        //skicka tillbaks state till parent
-        this.props.changeStatus();
-         
-        
+        // const stateToUpdate = event.target.name;
+        // this.setState({ [stateToUpdate]: event.target.value })
 
+        // this.props.changeStatus();s
 
     }
+    
 
 
     render() {
@@ -32,12 +36,19 @@ class LoggedInUser extends React.Component {
             <h1>
                 Hej! Du är inloggad. Välkommen att prenumerera på nyhetsbrev! 
             </h1>
-            <button onClick= {this.handleClick}>
+            <form>
+                Jag vill ha nyhetsbrev: 
+                <input type="checkbox"
+                    onChange={this.handleChange}
+                    value={this.state.isSubscriber}
+                />
+            </form>
+            {/* <button onClick= {this.handleClick}
+            onChange={this.handleChange}>
             {isSubscriber ?  'ON' : 'OFF'}
-            </button>
+            </button> */}
             </div>
         );
-
     }
 }
 
