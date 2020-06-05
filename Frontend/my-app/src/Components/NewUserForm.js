@@ -81,7 +81,8 @@ class AddNewUser extends React.Component {
                         <input type="checkbox"
                             name="userIsSubscriber"
                             onChange={this.handleChange}
-                            value={this.state.userIsSubscriber}
+                            value={this.state.isSubscriber}
+                            
                             
                         />
                     </label>
