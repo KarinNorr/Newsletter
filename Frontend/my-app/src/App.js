@@ -33,7 +33,6 @@ class App extends React.Component {
   }
 
   changeSubscriptionStatus = (isSubscriber) => {
-    //sätt state till det true/false
     this.setState({ isSubscriber: isSubscriber});
   }
 
@@ -44,7 +43,6 @@ class App extends React.Component {
       return (
         <div className="App">
           <Loggin showStart={this.state.showStart} getCurrentUser={this.currentUserId} />
-          {/* addera ny användare */}
           <br/>
           <br/>
         <AddNewUser getCurrentUser={this.currentUserId}/>

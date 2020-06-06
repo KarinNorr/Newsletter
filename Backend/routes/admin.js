@@ -55,7 +55,6 @@ router.post('/helloAdmin', urlencodedParser, function (request, response) {
                 console.log(subscribers);
             
                 subscribers.forEach(u => {
-                    //reply += "<br/>" + u.userEmail;
                     reply +=  u.userEmail + ", ";
                 });
         
@@ -65,7 +64,6 @@ router.post('/helloAdmin', urlencodedParser, function (request, response) {
 
     }
     else {
-        //response.send("Lösenordet matchar inte");
         response.sendStatus(401);
 
     }

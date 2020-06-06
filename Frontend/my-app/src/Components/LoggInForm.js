@@ -42,8 +42,6 @@ class Loggin extends React.Component {
             .then(data => {
                 console.log("Nu kommer datan tillbaks")
                 console.log(data)
-                //this.setState({ userId: data.userId })
-                //kalla på funktionen 
                 this.props.getCurrentUser(data.userId, data.isSubscriber);
             })
             .catch (err => {

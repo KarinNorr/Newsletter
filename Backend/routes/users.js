@@ -48,7 +48,6 @@ router.post('/newUser', function (request, response) {
 
     response.send({ userId: newUser.id, isSubscriber: newUser.isSubscriber});
     
-    //skicka tillbaks objektet istället
   })
 
 });
@@ -64,12 +63,10 @@ router.post('/tryUser', function (request, response) {
     console.log(user);
     console.log(user.userPassword);
     var decryptedPass = decryptPassword(user.userPassword);
-    //var decryptedPass = CryptoJS.AES.decrypt(user.userPassword, "Salt nyckel").toString(CryptoJS.enc.Utf8);
     console.log("Loggar det dekrypterade lösenordet");
     console.log(decryptedPass);
     if (decryptedPass == request.body.userPassword) {
       response.send({ userId: user.id, isSubscriber: user.isSubscriber});
-      //skicka tillbaks användarId
     }
     else {
       response.sendStatus(401);
